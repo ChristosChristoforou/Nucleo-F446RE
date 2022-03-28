@@ -1,0 +1,1747 @@
+ARM GAS  /tmp/cc9PANFY.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"stm32f4xx_hal.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.HAL_MspInit,"ax",%progbits
+  18              		.align	1
+  19              		.weak	HAL_MspInit
+  20              		.arch armv7e-m
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  24              		.fpu fpv4-sp-d16
+  26              	HAL_MspInit:
+  27              	.LFB132:
+  28              		.file 1 "/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx
+   1:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+   2:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   ******************************************************************************
+   3:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @file    stm32f4xx_hal.c
+   4:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @author  MCD Application Team
+   5:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief   HAL module driver.
+   6:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *          This is the common part of the HAL initialization
+   7:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *
+   8:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   ******************************************************************************
+   9:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @attention
+  10:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *
+  11:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * Copyright (c) 2017 STMicroelectronics.
+  12:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * All rights reserved.
+  13:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *
+  14:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * This software is licensed under terms that can be found in the LICENSE file
+  15:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * in the root directory of this software component.
+  16:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * If no LICENSE file comes with this software, it is provided AS-IS.
+  17:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *
+  18:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   ******************************************************************************
+  19:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   @verbatim
+  20:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   ==============================================================================
+  21:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****                      ##### How to use this driver #####
+  22:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   ==============================================================================
+  23:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     [..]
+  24:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     The common HAL driver contains a set of generic and common APIs that can be
+  25:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     used by the PPP peripheral drivers and the user to start using the HAL. 
+  26:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     [..]
+  27:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     The HAL contains two APIs' categories: 
+  28:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****          (+) Common HAL APIs
+  29:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****          (+) Services HAL APIs
+  30:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ARM GAS  /tmp/cc9PANFY.s 			page 2
+
+
+  31:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   @endverbatim
+  32:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   ******************************************************************************
+  33:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */ 
+  34:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+  35:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /* Includes ------------------------------------------------------------------*/
+  36:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** #include "stm32f4xx_hal.h"
+  37:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+  38:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /** @addtogroup STM32F4xx_HAL_Driver
+  39:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @{
+  40:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+  41:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+  42:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /** @defgroup HAL HAL
+  43:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief HAL module driver.
+  44:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @{
+  45:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+  46:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+  47:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /* Private typedef -----------------------------------------------------------*/
+  48:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /* Private define ------------------------------------------------------------*/
+  49:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /** @addtogroup HAL_Private_Constants
+  50:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @{
+  51:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+  52:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+  53:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief STM32F4xx HAL Driver version number V1.8.0
+  54:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+  55:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** #define __STM32F4xx_HAL_VERSION_MAIN   (0x01U) /*!< [31:24] main version */
+  56:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** #define __STM32F4xx_HAL_VERSION_SUB1   (0x08U) /*!< [23:16] sub1 version */
+  57:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** #define __STM32F4xx_HAL_VERSION_SUB2   (0x00U) /*!< [15:8]  sub2 version */
+  58:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** #define __STM32F4xx_HAL_VERSION_RC     (0x00U) /*!< [7:0]  release candidate */ 
+  59:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** #define __STM32F4xx_HAL_VERSION         ((__STM32F4xx_HAL_VERSION_MAIN << 24U)\
+  60:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****                                         |(__STM32F4xx_HAL_VERSION_SUB1 << 16U)\
+  61:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****                                         |(__STM32F4xx_HAL_VERSION_SUB2 << 8U )\
+  62:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****                                         |(__STM32F4xx_HAL_VERSION_RC))
+  63:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****                                         
+  64:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** #define IDCODE_DEVID_MASK    0x00000FFFU
+  65:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+  66:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /* ------------ RCC registers bit address in the alias region ----------- */
+  67:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** #define SYSCFG_OFFSET             (SYSCFG_BASE - PERIPH_BASE)
+  68:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /* ---  MEMRMP Register ---*/ 
+  69:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /* Alias word address of UFB_MODE bit */ 
+  70:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** #define MEMRMP_OFFSET             SYSCFG_OFFSET 
+  71:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** #define UFB_MODE_BIT_NUMBER       SYSCFG_MEMRMP_UFB_MODE_Pos
+  72:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** #define UFB_MODE_BB               (uint32_t)(PERIPH_BB_BASE + (MEMRMP_OFFSET * 32U) + (UFB_MODE_BIT
+  73:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+  74:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /* ---  CMPCR Register ---*/ 
+  75:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /* Alias word address of CMP_PD bit */ 
+  76:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** #define CMPCR_OFFSET              (SYSCFG_OFFSET + 0x20U) 
+  77:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** #define CMP_PD_BIT_NUMBER         SYSCFG_CMPCR_CMP_PD_Pos
+  78:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** #define CMPCR_CMP_PD_BB           (uint32_t)(PERIPH_BB_BASE + (CMPCR_OFFSET * 32U) + (CMP_PD_BIT_NU
+  79:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+  80:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /* ---  MCHDLYCR Register ---*/ 
+  81:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /* Alias word address of BSCKSEL bit */ 
+  82:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** #define MCHDLYCR_OFFSET            (SYSCFG_OFFSET + 0x30U) 
+  83:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** #define BSCKSEL_BIT_NUMBER         SYSCFG_MCHDLYCR_BSCKSEL_Pos
+  84:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** #define MCHDLYCR_BSCKSEL_BB        (uint32_t)(PERIPH_BB_BASE + (MCHDLYCR_OFFSET * 32U) + (BSCKSEL_B
+  85:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+  86:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @}
+  87:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ARM GAS  /tmp/cc9PANFY.s 			page 3
+
+
+  88:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+  89:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /* Private macro -------------------------------------------------------------*/
+  90:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /* Private variables ---------------------------------------------------------*/
+  91:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /** @addtogroup HAL_Private_Variables
+  92:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @{
+  93:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+  94:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** __IO uint32_t uwTick;
+  95:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** uint32_t uwTickPrio   = (1UL << __NVIC_PRIO_BITS); /* Invalid PRIO */
+  96:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** HAL_TickFreqTypeDef uwTickFreq = HAL_TICK_FREQ_DEFAULT;  /* 1KHz */
+  97:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+  98:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @}
+  99:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 100:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /* Private function prototypes -----------------------------------------------*/
+ 101:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /* Private functions ---------------------------------------------------------*/
+ 102:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 103:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /** @defgroup HAL_Exported_Functions HAL Exported Functions
+ 104:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @{
+ 105:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 106:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 107:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /** @defgroup HAL_Exported_Functions_Group1 Initialization and de-initialization Functions 
+ 108:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****  *  @brief    Initialization and de-initialization functions
+ 109:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****  *
+ 110:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** @verbatim    
+ 111:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****  ===============================================================================
+ 112:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****               ##### Initialization and Configuration functions #####
+ 113:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****  ===============================================================================
+ 114:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     [..]  This section provides functions allowing to:
+ 115:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****       (+) Initializes the Flash interface the NVIC allocation and initial clock 
+ 116:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****           configuration. It initializes the systick also when timeout is needed 
+ 117:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****           and the backup domain when enabled.
+ 118:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****       (+) De-Initializes common part of the HAL.
+ 119:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****       (+) Configure the time base source to have 1ms time base with a dedicated 
+ 120:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****           Tick interrupt priority. 
+ 121:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****         (++) SysTick timer is used by default as source of time base, but user
+ 122:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****              can eventually implement his proper time base source (a general purpose 
+ 123:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****              timer for example or other time source), keeping in mind that Time base 
+ 124:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****              duration should be kept 1ms since PPP_TIMEOUT_VALUEs are defined and 
+ 125:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****              handled in milliseconds basis.
+ 126:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****         (++) Time base configuration function (HAL_InitTick ()) is called automatically 
+ 127:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****              at the beginning of the program after reset by HAL_Init() or at any time 
+ 128:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****              when clock is configured, by HAL_RCC_ClockConfig(). 
+ 129:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****         (++) Source of time base is configured  to generate interrupts at regular 
+ 130:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****              time intervals. Care must be taken if HAL_Delay() is called from a 
+ 131:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****              peripheral ISR process, the Tick interrupt line must have higher priority 
+ 132:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****             (numerically lower) than the peripheral interrupt. Otherwise the caller 
+ 133:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****             ISR process will be blocked. 
+ 134:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****        (++) functions affecting time base configurations are declared as __weak  
+ 135:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****              to make  override possible  in case of other  implementations in user file.
+ 136:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** @endverbatim
+ 137:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @{
+ 138:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 139:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 140:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 141:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  This function is used to initialize the HAL Library; it must be the first 
+ 142:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *         instruction to be executed in the main program (before to call any other
+ 143:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *         HAL function), it performs the following:
+ 144:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *           Configure the Flash prefetch, instruction and Data caches.
+ARM GAS  /tmp/cc9PANFY.s 			page 4
+
+
+ 145:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *           Configures the SysTick to generate an interrupt each 1 millisecond,
+ 146:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *           which is clocked by the HSI (at this stage, the clock is not yet
+ 147:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *           configured and thus the system is running from the internal HSI at 16 MHz).
+ 148:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *           Set NVIC Group Priority to 4.
+ 149:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *           Calls the HAL_MspInit() callback function defined in user file 
+ 150:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *           "stm32f4xx_hal_msp.c" to do the global low level hardware initialization 
+ 151:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *            
+ 152:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @note   SysTick is used as time base for the HAL_Delay() function, the application
+ 153:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *         need to ensure that the SysTick time base is always set to 1 millisecond
+ 154:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *         to have correct HAL operation.
+ 155:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval HAL status
+ 156:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 157:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** HAL_StatusTypeDef HAL_Init(void)
+ 158:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 159:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   /* Configure Flash prefetch, Instruction cache, Data cache */ 
+ 160:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** #if (INSTRUCTION_CACHE_ENABLE != 0U)
+ 161:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   __HAL_FLASH_INSTRUCTION_CACHE_ENABLE();
+ 162:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** #endif /* INSTRUCTION_CACHE_ENABLE */
+ 163:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 164:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** #if (DATA_CACHE_ENABLE != 0U)
+ 165:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   __HAL_FLASH_DATA_CACHE_ENABLE();
+ 166:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** #endif /* DATA_CACHE_ENABLE */
+ 167:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 168:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** #if (PREFETCH_ENABLE != 0U)
+ 169:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   __HAL_FLASH_PREFETCH_BUFFER_ENABLE();
+ 170:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** #endif /* PREFETCH_ENABLE */
+ 171:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 172:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   /* Set Interrupt Group Priority */
+ 173:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   HAL_NVIC_SetPriorityGrouping(NVIC_PRIORITYGROUP_4);
+ 174:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 175:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   /* Use systick as time base source and configure 1ms tick (default clock after Reset is HSI) */
+ 176:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   HAL_InitTick(TICK_INT_PRIORITY);
+ 177:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 178:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   /* Init the low level hardware */
+ 179:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   HAL_MspInit();
+ 180:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 181:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   /* Return function status */
+ 182:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   return HAL_OK;
+ 183:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 184:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 185:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 186:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  This function de-Initializes common part of the HAL and stops the systick.
+ 187:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *         This function is optional.   
+ 188:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval HAL status
+ 189:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 190:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** HAL_StatusTypeDef HAL_DeInit(void)
+ 191:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 192:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   /* Reset of all peripherals */
+ 193:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   __HAL_RCC_APB1_FORCE_RESET();
+ 194:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   __HAL_RCC_APB1_RELEASE_RESET();
+ 195:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 196:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   __HAL_RCC_APB2_FORCE_RESET();
+ 197:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   __HAL_RCC_APB2_RELEASE_RESET();
+ 198:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 199:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   __HAL_RCC_AHB1_FORCE_RESET();
+ 200:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   __HAL_RCC_AHB1_RELEASE_RESET();
+ 201:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ARM GAS  /tmp/cc9PANFY.s 			page 5
+
+
+ 202:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   __HAL_RCC_AHB2_FORCE_RESET();
+ 203:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   __HAL_RCC_AHB2_RELEASE_RESET();
+ 204:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 205:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   __HAL_RCC_AHB3_FORCE_RESET();
+ 206:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   __HAL_RCC_AHB3_RELEASE_RESET();
+ 207:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 208:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   /* De-Init the low level hardware */
+ 209:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   HAL_MspDeInit();
+ 210:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     
+ 211:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   /* Return function status */
+ 212:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   return HAL_OK;
+ 213:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 214:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 215:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 216:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Initialize the MSP.
+ 217:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval None
+ 218:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 219:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** __weak void HAL_MspInit(void)
+ 220:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+  29              		.loc 1 220 1 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		@ link register save eliminated.
+ 221:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   /* NOTE : This function should not be modified, when the callback is needed,
+ 222:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****             the HAL_MspInit could be implemented in the user file
+ 223:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****    */
+ 224:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+  34              		.loc 1 224 1 view .LVU1
+  35 0000 7047     		bx	lr
+  36              		.cfi_endproc
+  37              	.LFE132:
+  39              		.section	.text.HAL_MspDeInit,"ax",%progbits
+  40              		.align	1
+  41              		.weak	HAL_MspDeInit
+  42              		.syntax unified
+  43              		.thumb
+  44              		.thumb_func
+  45              		.fpu fpv4-sp-d16
+  47              	HAL_MspDeInit:
+  48              	.LFB133:
+ 225:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 226:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 227:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  DeInitializes the MSP.
+ 228:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval None
+ 229:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 230:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** __weak void HAL_MspDeInit(void)
+ 231:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+  49              		.loc 1 231 1 view -0
+  50              		.cfi_startproc
+  51              		@ args = 0, pretend = 0, frame = 0
+  52              		@ frame_needed = 0, uses_anonymous_args = 0
+  53              		@ link register save eliminated.
+ 232:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   /* NOTE : This function should not be modified, when the callback is needed,
+ 233:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****             the HAL_MspDeInit could be implemented in the user file
+ 234:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****    */ 
+ 235:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ARM GAS  /tmp/cc9PANFY.s 			page 6
+
+
+  54              		.loc 1 235 1 view .LVU3
+  55 0000 7047     		bx	lr
+  56              		.cfi_endproc
+  57              	.LFE133:
+  59              		.section	.text.HAL_DeInit,"ax",%progbits
+  60              		.align	1
+  61              		.global	HAL_DeInit
+  62              		.syntax unified
+  63              		.thumb
+  64              		.thumb_func
+  65              		.fpu fpv4-sp-d16
+  67              	HAL_DeInit:
+  68              	.LFB131:
+ 191:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   /* Reset of all peripherals */
+  69              		.loc 1 191 1 view -0
+  70              		.cfi_startproc
+  71              		@ args = 0, pretend = 0, frame = 0
+  72              		@ frame_needed = 0, uses_anonymous_args = 0
+  73 0000 10B5     		push	{r4, lr}
+  74              	.LCFI0:
+  75              		.cfi_def_cfa_offset 8
+  76              		.cfi_offset 4, -8
+  77              		.cfi_offset 14, -4
+ 193:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   __HAL_RCC_APB1_RELEASE_RESET();
+  78              		.loc 1 193 3 view .LVU5
+  79 0002 094B     		ldr	r3, .L5
+  80 0004 4FF0FF32 		mov	r2, #-1
+  81 0008 1A62     		str	r2, [r3, #32]
+ 194:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+  82              		.loc 1 194 3 view .LVU6
+  83 000a 0024     		movs	r4, #0
+  84 000c 1C62     		str	r4, [r3, #32]
+ 196:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   __HAL_RCC_APB2_RELEASE_RESET();
+  85              		.loc 1 196 3 view .LVU7
+  86 000e 5A62     		str	r2, [r3, #36]
+ 197:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+  87              		.loc 1 197 3 view .LVU8
+  88 0010 5C62     		str	r4, [r3, #36]
+ 199:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   __HAL_RCC_AHB1_RELEASE_RESET();
+  89              		.loc 1 199 3 view .LVU9
+  90 0012 1A61     		str	r2, [r3, #16]
+ 200:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+  91              		.loc 1 200 3 view .LVU10
+  92 0014 1C61     		str	r4, [r3, #16]
+ 202:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   __HAL_RCC_AHB2_RELEASE_RESET();
+  93              		.loc 1 202 3 view .LVU11
+  94 0016 5A61     		str	r2, [r3, #20]
+ 203:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+  95              		.loc 1 203 3 view .LVU12
+  96 0018 5C61     		str	r4, [r3, #20]
+ 205:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   __HAL_RCC_AHB3_RELEASE_RESET();
+  97              		.loc 1 205 3 view .LVU13
+  98 001a 9A61     		str	r2, [r3, #24]
+ 206:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+  99              		.loc 1 206 3 view .LVU14
+ 100 001c 9C61     		str	r4, [r3, #24]
+ 209:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     
+ARM GAS  /tmp/cc9PANFY.s 			page 7
+
+
+ 101              		.loc 1 209 3 view .LVU15
+ 102 001e FFF7FEFF 		bl	HAL_MspDeInit
+ 103              	.LVL0:
+ 212:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 104              		.loc 1 212 3 view .LVU16
+ 213:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 105              		.loc 1 213 1 is_stmt 0 view .LVU17
+ 106 0022 2046     		mov	r0, r4
+ 107 0024 10BD     		pop	{r4, pc}
+ 108              	.L6:
+ 109 0026 00BF     		.align	2
+ 110              	.L5:
+ 111 0028 00380240 		.word	1073887232
+ 112              		.cfi_endproc
+ 113              	.LFE131:
+ 115              		.section	.text.HAL_InitTick,"ax",%progbits
+ 116              		.align	1
+ 117              		.weak	HAL_InitTick
+ 118              		.syntax unified
+ 119              		.thumb
+ 120              		.thumb_func
+ 121              		.fpu fpv4-sp-d16
+ 123              	HAL_InitTick:
+ 124              	.LVL1:
+ 125              	.LFB134:
+ 236:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 237:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 238:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief This function configures the source of the time base.
+ 239:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *        The time source is configured  to have 1ms time base with a dedicated 
+ 240:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *        Tick interrupt priority.
+ 241:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @note This function is called  automatically at the beginning of program after
+ 242:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       reset by HAL_Init() or at any time when clock is reconfigured  by HAL_RCC_ClockConfig().
+ 243:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @note In the default implementation, SysTick timer is the source of time base. 
+ 244:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       It is used to generate interrupts at regular time intervals. 
+ 245:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       Care must be taken if HAL_Delay() is called from a peripheral ISR process, 
+ 246:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       The SysTick interrupt must have higher priority (numerically lower)
+ 247:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       than the peripheral interrupt. Otherwise the caller ISR process will be blocked.
+ 248:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       The function is declared as __weak  to be overwritten  in case of other
+ 249:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       implementation  in user file.
+ 250:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @param TickPriority Tick interrupt priority.
+ 251:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval HAL status
+ 252:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 253:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** __weak HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)
+ 254:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 126              		.loc 1 254 1 is_stmt 1 view -0
+ 127              		.cfi_startproc
+ 128              		@ args = 0, pretend = 0, frame = 0
+ 129              		@ frame_needed = 0, uses_anonymous_args = 0
+ 130              		.loc 1 254 1 is_stmt 0 view .LVU19
+ 131 0000 10B5     		push	{r4, lr}
+ 132              	.LCFI1:
+ 133              		.cfi_def_cfa_offset 8
+ 134              		.cfi_offset 4, -8
+ 135              		.cfi_offset 14, -4
+ 136 0002 0446     		mov	r4, r0
+ 255:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   /* Configure the SysTick to have interrupt in 1ms time basis*/
+ 256:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   if (HAL_SYSTICK_Config(SystemCoreClock / (1000U / uwTickFreq)) > 0U)
+ARM GAS  /tmp/cc9PANFY.s 			page 8
+
+
+ 137              		.loc 1 256 3 is_stmt 1 view .LVU20
+ 138              		.loc 1 256 51 is_stmt 0 view .LVU21
+ 139 0004 0E4B     		ldr	r3, .L13
+ 140 0006 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 141              	.LVL2:
+ 142              		.loc 1 256 51 view .LVU22
+ 143 0008 4FF47A73 		mov	r3, #1000
+ 144 000c B3FBF0F3 		udiv	r3, r3, r0
+ 145              		.loc 1 256 7 view .LVU23
+ 146 0010 0C4A     		ldr	r2, .L13+4
+ 147 0012 1068     		ldr	r0, [r2]
+ 148 0014 B0FBF3F0 		udiv	r0, r0, r3
+ 149 0018 FFF7FEFF 		bl	HAL_SYSTICK_Config
+ 150              	.LVL3:
+ 151              		.loc 1 256 6 view .LVU24
+ 152 001c 68B9     		cbnz	r0, .L9
+ 257:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   {
+ 258:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     return HAL_ERROR;
+ 259:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   }
+ 260:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 261:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   /* Configure the SysTick IRQ priority */
+ 262:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   if (TickPriority < (1UL << __NVIC_PRIO_BITS))
+ 153              		.loc 1 262 3 is_stmt 1 view .LVU25
+ 154              		.loc 1 262 6 is_stmt 0 view .LVU26
+ 155 001e 0F2C     		cmp	r4, #15
+ 156 0020 01D9     		bls	.L12
+ 263:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   {
+ 264:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     HAL_NVIC_SetPriority(SysTick_IRQn, TickPriority, 0U);
+ 265:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     uwTickPrio = TickPriority;
+ 266:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   }
+ 267:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   else
+ 268:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   {
+ 269:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     return HAL_ERROR;
+ 157              		.loc 1 269 12 view .LVU27
+ 158 0022 0120     		movs	r0, #1
+ 159 0024 0AE0     		b	.L8
+ 160              	.L12:
+ 264:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     uwTickPrio = TickPriority;
+ 161              		.loc 1 264 5 is_stmt 1 view .LVU28
+ 162 0026 0022     		movs	r2, #0
+ 163 0028 2146     		mov	r1, r4
+ 164 002a 4FF0FF30 		mov	r0, #-1
+ 165 002e FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 166              	.LVL4:
+ 265:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   }
+ 167              		.loc 1 265 5 view .LVU29
+ 265:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   }
+ 168              		.loc 1 265 16 is_stmt 0 view .LVU30
+ 169 0032 054B     		ldr	r3, .L13+8
+ 170 0034 1C60     		str	r4, [r3]
+ 270:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   }
+ 271:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 272:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   /* Return function status */
+ 273:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   return HAL_OK;
+ 171              		.loc 1 273 3 is_stmt 1 view .LVU31
+ 172              		.loc 1 273 10 is_stmt 0 view .LVU32
+ 173 0036 0020     		movs	r0, #0
+ARM GAS  /tmp/cc9PANFY.s 			page 9
+
+
+ 174 0038 00E0     		b	.L8
+ 175              	.L9:
+ 258:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   }
+ 176              		.loc 1 258 12 view .LVU33
+ 177 003a 0120     		movs	r0, #1
+ 178              	.L8:
+ 274:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 179              		.loc 1 274 1 view .LVU34
+ 180 003c 10BD     		pop	{r4, pc}
+ 181              	.LVL5:
+ 182              	.L14:
+ 183              		.loc 1 274 1 view .LVU35
+ 184 003e 00BF     		.align	2
+ 185              	.L13:
+ 186 0040 00000000 		.word	.LANCHOR0
+ 187 0044 00000000 		.word	SystemCoreClock
+ 188 0048 00000000 		.word	.LANCHOR1
+ 189              		.cfi_endproc
+ 190              	.LFE134:
+ 192              		.section	.text.HAL_Init,"ax",%progbits
+ 193              		.align	1
+ 194              		.global	HAL_Init
+ 195              		.syntax unified
+ 196              		.thumb
+ 197              		.thumb_func
+ 198              		.fpu fpv4-sp-d16
+ 200              	HAL_Init:
+ 201              	.LFB130:
+ 158:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   /* Configure Flash prefetch, Instruction cache, Data cache */ 
+ 202              		.loc 1 158 1 is_stmt 1 view -0
+ 203              		.cfi_startproc
+ 204              		@ args = 0, pretend = 0, frame = 0
+ 205              		@ frame_needed = 0, uses_anonymous_args = 0
+ 206 0000 08B5     		push	{r3, lr}
+ 207              	.LCFI2:
+ 208              		.cfi_def_cfa_offset 8
+ 209              		.cfi_offset 3, -8
+ 210              		.cfi_offset 14, -4
+ 161:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** #endif /* INSTRUCTION_CACHE_ENABLE */
+ 211              		.loc 1 161 3 view .LVU37
+ 212 0002 0B4B     		ldr	r3, .L17
+ 213 0004 1A68     		ldr	r2, [r3]
+ 214 0006 42F40072 		orr	r2, r2, #512
+ 215 000a 1A60     		str	r2, [r3]
+ 165:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** #endif /* DATA_CACHE_ENABLE */
+ 216              		.loc 1 165 3 view .LVU38
+ 217 000c 1A68     		ldr	r2, [r3]
+ 218 000e 42F48062 		orr	r2, r2, #1024
+ 219 0012 1A60     		str	r2, [r3]
+ 169:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** #endif /* PREFETCH_ENABLE */
+ 220              		.loc 1 169 3 view .LVU39
+ 221 0014 1A68     		ldr	r2, [r3]
+ 222 0016 42F48072 		orr	r2, r2, #256
+ 223 001a 1A60     		str	r2, [r3]
+ 173:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 224              		.loc 1 173 3 view .LVU40
+ 225 001c 0320     		movs	r0, #3
+ARM GAS  /tmp/cc9PANFY.s 			page 10
+
+
+ 226 001e FFF7FEFF 		bl	HAL_NVIC_SetPriorityGrouping
+ 227              	.LVL6:
+ 176:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 228              		.loc 1 176 3 view .LVU41
+ 229 0022 0020     		movs	r0, #0
+ 230 0024 FFF7FEFF 		bl	HAL_InitTick
+ 231              	.LVL7:
+ 179:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 232              		.loc 1 179 3 view .LVU42
+ 233 0028 FFF7FEFF 		bl	HAL_MspInit
+ 234              	.LVL8:
+ 182:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 235              		.loc 1 182 3 view .LVU43
+ 183:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 236              		.loc 1 183 1 is_stmt 0 view .LVU44
+ 237 002c 0020     		movs	r0, #0
+ 238 002e 08BD     		pop	{r3, pc}
+ 239              	.L18:
+ 240              		.align	2
+ 241              	.L17:
+ 242 0030 003C0240 		.word	1073888256
+ 243              		.cfi_endproc
+ 244              	.LFE130:
+ 246              		.section	.text.HAL_IncTick,"ax",%progbits
+ 247              		.align	1
+ 248              		.weak	HAL_IncTick
+ 249              		.syntax unified
+ 250              		.thumb
+ 251              		.thumb_func
+ 252              		.fpu fpv4-sp-d16
+ 254              	HAL_IncTick:
+ 255              	.LFB135:
+ 275:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 276:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 277:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @}
+ 278:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 279:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 280:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /** @defgroup HAL_Exported_Functions_Group2 HAL Control functions 
+ 281:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****  *  @brief    HAL Control functions
+ 282:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****  *
+ 283:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** @verbatim
+ 284:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****  ===============================================================================
+ 285:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****                       ##### HAL Control functions #####
+ 286:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****  ===============================================================================
+ 287:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     [..]  This section provides functions allowing to:
+ 288:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****       (+) Provide a tick value in millisecond
+ 289:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****       (+) Provide a blocking delay in millisecond
+ 290:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****       (+) Suspend the time base source interrupt
+ 291:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****       (+) Resume the time base source interrupt
+ 292:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****       (+) Get the HAL API driver version
+ 293:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****       (+) Get the device identifier
+ 294:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****       (+) Get the device revision identifier
+ 295:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****       (+) Enable/Disable Debug module during SLEEP mode
+ 296:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****       (+) Enable/Disable Debug module during STOP mode
+ 297:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****       (+) Enable/Disable Debug module during STANDBY mode
+ 298:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 299:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** @endverbatim
+ARM GAS  /tmp/cc9PANFY.s 			page 11
+
+
+ 300:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @{
+ 301:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 302:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 303:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 304:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief This function is called to increment  a global variable "uwTick"
+ 305:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *        used as application time base.
+ 306:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @note In the default implementation, this variable is incremented each 1ms
+ 307:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       in SysTick ISR.
+ 308:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****  * @note This function is declared as __weak to be overwritten in case of other 
+ 309:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *      implementations in user file.
+ 310:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval None
+ 311:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 312:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** __weak void HAL_IncTick(void)
+ 313:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 256              		.loc 1 313 1 is_stmt 1 view -0
+ 257              		.cfi_startproc
+ 258              		@ args = 0, pretend = 0, frame = 0
+ 259              		@ frame_needed = 0, uses_anonymous_args = 0
+ 260              		@ link register save eliminated.
+ 314:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   uwTick += uwTickFreq;
+ 261              		.loc 1 314 3 view .LVU46
+ 262              		.loc 1 314 10 is_stmt 0 view .LVU47
+ 263 0000 034A     		ldr	r2, .L20
+ 264 0002 1168     		ldr	r1, [r2]
+ 265 0004 034B     		ldr	r3, .L20+4
+ 266 0006 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 267 0008 0B44     		add	r3, r3, r1
+ 268 000a 1360     		str	r3, [r2]
+ 315:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 269              		.loc 1 315 1 view .LVU48
+ 270 000c 7047     		bx	lr
+ 271              	.L21:
+ 272 000e 00BF     		.align	2
+ 273              	.L20:
+ 274 0010 00000000 		.word	uwTick
+ 275 0014 00000000 		.word	.LANCHOR0
+ 276              		.cfi_endproc
+ 277              	.LFE135:
+ 279              		.section	.text.HAL_GetTick,"ax",%progbits
+ 280              		.align	1
+ 281              		.weak	HAL_GetTick
+ 282              		.syntax unified
+ 283              		.thumb
+ 284              		.thumb_func
+ 285              		.fpu fpv4-sp-d16
+ 287              	HAL_GetTick:
+ 288              	.LFB136:
+ 316:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 317:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 318:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief Provides a tick value in millisecond.
+ 319:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @note This function is declared as __weak to be overwritten in case of other 
+ 320:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       implementations in user file.
+ 321:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval tick value
+ 322:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 323:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** __weak uint32_t HAL_GetTick(void)
+ 324:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 289              		.loc 1 324 1 is_stmt 1 view -0
+ARM GAS  /tmp/cc9PANFY.s 			page 12
+
+
+ 290              		.cfi_startproc
+ 291              		@ args = 0, pretend = 0, frame = 0
+ 292              		@ frame_needed = 0, uses_anonymous_args = 0
+ 293              		@ link register save eliminated.
+ 325:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   return uwTick;
+ 294              		.loc 1 325 3 view .LVU50
+ 295              		.loc 1 325 10 is_stmt 0 view .LVU51
+ 296 0000 014B     		ldr	r3, .L23
+ 297 0002 1868     		ldr	r0, [r3]
+ 326:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 298              		.loc 1 326 1 view .LVU52
+ 299 0004 7047     		bx	lr
+ 300              	.L24:
+ 301 0006 00BF     		.align	2
+ 302              	.L23:
+ 303 0008 00000000 		.word	uwTick
+ 304              		.cfi_endproc
+ 305              	.LFE136:
+ 307              		.section	.text.HAL_GetTickPrio,"ax",%progbits
+ 308              		.align	1
+ 309              		.global	HAL_GetTickPrio
+ 310              		.syntax unified
+ 311              		.thumb
+ 312              		.thumb_func
+ 313              		.fpu fpv4-sp-d16
+ 315              	HAL_GetTickPrio:
+ 316              	.LFB137:
+ 327:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 328:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 329:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief This function returns a tick priority.
+ 330:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval tick priority
+ 331:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 332:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** uint32_t HAL_GetTickPrio(void)
+ 333:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 317              		.loc 1 333 1 is_stmt 1 view -0
+ 318              		.cfi_startproc
+ 319              		@ args = 0, pretend = 0, frame = 0
+ 320              		@ frame_needed = 0, uses_anonymous_args = 0
+ 321              		@ link register save eliminated.
+ 334:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   return uwTickPrio;
+ 322              		.loc 1 334 3 view .LVU54
+ 335:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 323              		.loc 1 335 1 is_stmt 0 view .LVU55
+ 324 0000 014B     		ldr	r3, .L26
+ 325 0002 1868     		ldr	r0, [r3]
+ 326 0004 7047     		bx	lr
+ 327              	.L27:
+ 328 0006 00BF     		.align	2
+ 329              	.L26:
+ 330 0008 00000000 		.word	.LANCHOR1
+ 331              		.cfi_endproc
+ 332              	.LFE137:
+ 334              		.section	.rodata.HAL_SetTickFreq.str1.4,"aMS",%progbits,1
+ 335              		.align	2
+ 336              	.LC0:
+ 337 0000 2F686F6D 		.ascii	"/home/christoschristoforou/STM32Cube/Repository/STM"
+ 337      652F6368 
+ARM GAS  /tmp/cc9PANFY.s 			page 13
+
+
+ 337      72697374 
+ 337      6F736368 
+ 337      72697374 
+ 338 0033 33324375 		.ascii	"32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/S"
+ 338      62655F46 
+ 338      575F4634 
+ 338      5F56312E 
+ 338      32372E30 
+ 339 0066 72632F73 		.ascii	"rc/stm32f4xx_hal.c\000"
+ 339      746D3332 
+ 339      66347878 
+ 339      5F68616C 
+ 339      2E6300
+ 340              		.section	.text.HAL_SetTickFreq,"ax",%progbits
+ 341              		.align	1
+ 342              		.global	HAL_SetTickFreq
+ 343              		.syntax unified
+ 344              		.thumb
+ 345              		.thumb_func
+ 346              		.fpu fpv4-sp-d16
+ 348              	HAL_SetTickFreq:
+ 349              	.LVL9:
+ 350              	.LFB138:
+ 336:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 337:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 338:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief Set new tick Freq.
+ 339:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval Status
+ 340:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 341:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** HAL_StatusTypeDef HAL_SetTickFreq(HAL_TickFreqTypeDef Freq)
+ 342:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 351              		.loc 1 342 1 is_stmt 1 view -0
+ 352              		.cfi_startproc
+ 353              		@ args = 0, pretend = 0, frame = 0
+ 354              		@ frame_needed = 0, uses_anonymous_args = 0
+ 355              		.loc 1 342 1 is_stmt 0 view .LVU57
+ 356 0000 38B5     		push	{r3, r4, r5, lr}
+ 357              	.LCFI3:
+ 358              		.cfi_def_cfa_offset 16
+ 359              		.cfi_offset 3, -16
+ 360              		.cfi_offset 4, -12
+ 361              		.cfi_offset 5, -8
+ 362              		.cfi_offset 14, -4
+ 363 0002 0446     		mov	r4, r0
+ 343:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   HAL_StatusTypeDef status  = HAL_OK;
+ 364              		.loc 1 343 3 is_stmt 1 view .LVU58
+ 365              	.LVL10:
+ 344:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   HAL_TickFreqTypeDef prevTickFreq;
+ 366              		.loc 1 344 3 view .LVU59
+ 345:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 346:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   assert_param(IS_TICKFREQ(Freq));
+ 367              		.loc 1 346 3 view .LVU60
+ 368 0004 6428     		cmp	r0, #100
+ 369 0006 03D0     		beq	.L29
+ 370              		.loc 1 346 3 is_stmt 0 discriminator 1 view .LVU61
+ 371 0008 0A28     		cmp	r0, #10
+ 372 000a 01D0     		beq	.L29
+ 373              		.loc 1 346 3 discriminator 2 view .LVU62
+ARM GAS  /tmp/cc9PANFY.s 			page 14
+
+
+ 374 000c 0128     		cmp	r0, #1
+ 375 000e 05D1     		bne	.L33
+ 376              	.LVL11:
+ 377              	.L29:
+ 347:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 348:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   if (uwTickFreq != Freq)
+ 378              		.loc 1 348 3 is_stmt 1 view .LVU63
+ 379              		.loc 1 348 18 is_stmt 0 view .LVU64
+ 380 0010 0A4B     		ldr	r3, .L35
+ 381 0012 1D78     		ldrb	r5, [r3]	@ zero_extendqisi2
+ 382              		.loc 1 348 6 view .LVU65
+ 383 0014 A542     		cmp	r5, r4
+ 384 0016 07D1     		bne	.L34
+ 343:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   HAL_TickFreqTypeDef prevTickFreq;
+ 385              		.loc 1 343 21 view .LVU66
+ 386 0018 0020     		movs	r0, #0
+ 387              	.LVL12:
+ 388              	.L30:
+ 349:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   {
+ 350:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     /* Back up uwTickFreq frequency */
+ 351:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     prevTickFreq = uwTickFreq;
+ 352:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 353:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     /* Update uwTickFreq global variable used by HAL_InitTick() */
+ 354:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     uwTickFreq = Freq;
+ 355:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 356:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     /* Apply the new tick Freq  */
+ 357:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     status = HAL_InitTick(uwTickPrio);
+ 358:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 359:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     if (status != HAL_OK)
+ 360:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     {
+ 361:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****       /* Restore previous tick frequency */
+ 362:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****       uwTickFreq = prevTickFreq;
+ 363:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     }
+ 364:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   }
+ 365:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 366:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   return status;
+ 389              		.loc 1 366 3 is_stmt 1 view .LVU67
+ 367:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 390              		.loc 1 367 1 is_stmt 0 view .LVU68
+ 391 001a 38BD     		pop	{r3, r4, r5, pc}
+ 392              	.LVL13:
+ 393              	.L33:
+ 346:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 394              		.loc 1 346 3 discriminator 3 view .LVU69
+ 395 001c 4FF4AD71 		mov	r1, #346
+ 396 0020 0748     		ldr	r0, .L35+4
+ 397              	.LVL14:
+ 346:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 398              		.loc 1 346 3 discriminator 3 view .LVU70
+ 399 0022 FFF7FEFF 		bl	assert_failed
+ 400              	.LVL15:
+ 401 0026 F3E7     		b	.L29
+ 402              	.L34:
+ 351:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 403              		.loc 1 351 5 is_stmt 1 view .LVU71
+ 404              	.LVL16:
+ 354:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ARM GAS  /tmp/cc9PANFY.s 			page 15
+
+
+ 405              		.loc 1 354 5 view .LVU72
+ 354:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 406              		.loc 1 354 16 is_stmt 0 view .LVU73
+ 407 0028 1C70     		strb	r4, [r3]
+ 357:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 408              		.loc 1 357 5 is_stmt 1 view .LVU74
+ 357:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 409              		.loc 1 357 14 is_stmt 0 view .LVU75
+ 410 002a 064B     		ldr	r3, .L35+8
+ 411 002c 1868     		ldr	r0, [r3]
+ 412 002e FFF7FEFF 		bl	HAL_InitTick
+ 413              	.LVL17:
+ 359:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     {
+ 414              		.loc 1 359 5 is_stmt 1 view .LVU76
+ 359:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     {
+ 415              		.loc 1 359 8 is_stmt 0 view .LVU77
+ 416 0032 0028     		cmp	r0, #0
+ 417 0034 F1D0     		beq	.L30
+ 362:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     }
+ 418              		.loc 1 362 7 is_stmt 1 view .LVU78
+ 362:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     }
+ 419              		.loc 1 362 18 is_stmt 0 view .LVU79
+ 420 0036 014B     		ldr	r3, .L35
+ 421 0038 1D70     		strb	r5, [r3]
+ 422 003a EEE7     		b	.L30
+ 423              	.L36:
+ 424              		.align	2
+ 425              	.L35:
+ 426 003c 00000000 		.word	.LANCHOR0
+ 427 0040 00000000 		.word	.LC0
+ 428 0044 00000000 		.word	.LANCHOR1
+ 429              		.cfi_endproc
+ 430              	.LFE138:
+ 432              		.section	.text.HAL_GetTickFreq,"ax",%progbits
+ 433              		.align	1
+ 434              		.global	HAL_GetTickFreq
+ 435              		.syntax unified
+ 436              		.thumb
+ 437              		.thumb_func
+ 438              		.fpu fpv4-sp-d16
+ 440              	HAL_GetTickFreq:
+ 441              	.LFB139:
+ 368:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 369:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 370:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief Return tick frequency.
+ 371:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval tick period in Hz
+ 372:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 373:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** HAL_TickFreqTypeDef HAL_GetTickFreq(void)
+ 374:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 442              		.loc 1 374 1 is_stmt 1 view -0
+ 443              		.cfi_startproc
+ 444              		@ args = 0, pretend = 0, frame = 0
+ 445              		@ frame_needed = 0, uses_anonymous_args = 0
+ 446              		@ link register save eliminated.
+ 375:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   return uwTickFreq;
+ 447              		.loc 1 375 3 view .LVU81
+ 376:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ARM GAS  /tmp/cc9PANFY.s 			page 16
+
+
+ 448              		.loc 1 376 1 is_stmt 0 view .LVU82
+ 449 0000 014B     		ldr	r3, .L38
+ 450 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 451 0004 7047     		bx	lr
+ 452              	.L39:
+ 453 0006 00BF     		.align	2
+ 454              	.L38:
+ 455 0008 00000000 		.word	.LANCHOR0
+ 456              		.cfi_endproc
+ 457              	.LFE139:
+ 459              		.section	.text.HAL_Delay,"ax",%progbits
+ 460              		.align	1
+ 461              		.weak	HAL_Delay
+ 462              		.syntax unified
+ 463              		.thumb
+ 464              		.thumb_func
+ 465              		.fpu fpv4-sp-d16
+ 467              	HAL_Delay:
+ 468              	.LVL18:
+ 469              	.LFB140:
+ 377:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 378:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 379:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief This function provides minimum delay (in milliseconds) based 
+ 380:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *        on variable incremented.
+ 381:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @note In the default implementation , SysTick timer is the source of time base.
+ 382:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       It is used to generate interrupts at regular time intervals where uwTick
+ 383:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       is incremented.
+ 384:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @note This function is declared as __weak to be overwritten in case of other
+ 385:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       implementations in user file.
+ 386:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @param Delay specifies the delay time length, in milliseconds.
+ 387:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval None
+ 388:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 389:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** __weak void HAL_Delay(uint32_t Delay)
+ 390:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 470              		.loc 1 390 1 is_stmt 1 view -0
+ 471              		.cfi_startproc
+ 472              		@ args = 0, pretend = 0, frame = 0
+ 473              		@ frame_needed = 0, uses_anonymous_args = 0
+ 474              		.loc 1 390 1 is_stmt 0 view .LVU84
+ 475 0000 38B5     		push	{r3, r4, r5, lr}
+ 476              	.LCFI4:
+ 477              		.cfi_def_cfa_offset 16
+ 478              		.cfi_offset 3, -16
+ 479              		.cfi_offset 4, -12
+ 480              		.cfi_offset 5, -8
+ 481              		.cfi_offset 14, -4
+ 482 0002 0446     		mov	r4, r0
+ 391:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   uint32_t tickstart = HAL_GetTick();
+ 483              		.loc 1 391 3 is_stmt 1 view .LVU85
+ 484              		.loc 1 391 24 is_stmt 0 view .LVU86
+ 485 0004 FFF7FEFF 		bl	HAL_GetTick
+ 486              	.LVL19:
+ 487              		.loc 1 391 24 view .LVU87
+ 488 0008 0546     		mov	r5, r0
+ 489              	.LVL20:
+ 392:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   uint32_t wait = Delay;
+ 490              		.loc 1 392 3 is_stmt 1 view .LVU88
+ARM GAS  /tmp/cc9PANFY.s 			page 17
+
+
+ 393:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 394:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   /* Add a freq to guarantee minimum wait */
+ 395:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   if (wait < HAL_MAX_DELAY)
+ 491              		.loc 1 395 3 view .LVU89
+ 492              		.loc 1 395 6 is_stmt 0 view .LVU90
+ 493 000a B4F1FF3F 		cmp	r4, #-1
+ 494 000e 02D0     		beq	.L42
+ 396:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   {
+ 397:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****     wait += (uint32_t)(uwTickFreq);
+ 495              		.loc 1 397 5 is_stmt 1 view .LVU91
+ 496              		.loc 1 397 13 is_stmt 0 view .LVU92
+ 497 0010 044B     		ldr	r3, .L44
+ 498 0012 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 499              		.loc 1 397 10 view .LVU93
+ 500 0014 1C44     		add	r4, r4, r3
+ 501              	.LVL21:
+ 502              	.L42:
+ 398:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   }
+ 399:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 400:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   while((HAL_GetTick() - tickstart) < wait)
+ 401:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   {
+ 402:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   }
+ 503              		.loc 1 402 3 is_stmt 1 discriminator 1 view .LVU94
+ 400:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   {
+ 504              		.loc 1 400 8 discriminator 1 view .LVU95
+ 400:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   {
+ 505              		.loc 1 400 10 is_stmt 0 discriminator 1 view .LVU96
+ 506 0016 FFF7FEFF 		bl	HAL_GetTick
+ 507              	.LVL22:
+ 400:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   {
+ 508              		.loc 1 400 24 discriminator 1 view .LVU97
+ 509 001a 401B     		subs	r0, r0, r5
+ 400:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   {
+ 510              		.loc 1 400 8 discriminator 1 view .LVU98
+ 511 001c A042     		cmp	r0, r4
+ 512 001e FAD3     		bcc	.L42
+ 403:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 513              		.loc 1 403 1 view .LVU99
+ 514 0020 38BD     		pop	{r3, r4, r5, pc}
+ 515              	.LVL23:
+ 516              	.L45:
+ 517              		.loc 1 403 1 view .LVU100
+ 518 0022 00BF     		.align	2
+ 519              	.L44:
+ 520 0024 00000000 		.word	.LANCHOR0
+ 521              		.cfi_endproc
+ 522              	.LFE140:
+ 524              		.section	.text.HAL_SuspendTick,"ax",%progbits
+ 525              		.align	1
+ 526              		.weak	HAL_SuspendTick
+ 527              		.syntax unified
+ 528              		.thumb
+ 529              		.thumb_func
+ 530              		.fpu fpv4-sp-d16
+ 532              	HAL_SuspendTick:
+ 533              	.LFB141:
+ 404:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ARM GAS  /tmp/cc9PANFY.s 			page 18
+
+
+ 405:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 406:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief Suspend Tick increment.
+ 407:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @note In the default implementation , SysTick timer is the source of time base. It is
+ 408:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       used to generate interrupts at regular time intervals. Once HAL_SuspendTick()
+ 409:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       is called, the SysTick interrupt will be disabled and so Tick increment 
+ 410:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       is suspended.
+ 411:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @note This function is declared as __weak to be overwritten in case of other
+ 412:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       implementations in user file.
+ 413:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval None
+ 414:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 415:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** __weak void HAL_SuspendTick(void)
+ 416:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 534              		.loc 1 416 1 is_stmt 1 view -0
+ 535              		.cfi_startproc
+ 536              		@ args = 0, pretend = 0, frame = 0
+ 537              		@ frame_needed = 0, uses_anonymous_args = 0
+ 538              		@ link register save eliminated.
+ 417:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   /* Disable SysTick Interrupt */
+ 418:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   SysTick->CTRL &= ~SysTick_CTRL_TICKINT_Msk;
+ 539              		.loc 1 418 3 view .LVU102
+ 540              		.loc 1 418 17 is_stmt 0 view .LVU103
+ 541 0000 024A     		ldr	r2, .L47
+ 542 0002 1368     		ldr	r3, [r2]
+ 543 0004 23F00203 		bic	r3, r3, #2
+ 544 0008 1360     		str	r3, [r2]
+ 419:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 545              		.loc 1 419 1 view .LVU104
+ 546 000a 7047     		bx	lr
+ 547              	.L48:
+ 548              		.align	2
+ 549              	.L47:
+ 550 000c 10E000E0 		.word	-536813552
+ 551              		.cfi_endproc
+ 552              	.LFE141:
+ 554              		.section	.text.HAL_ResumeTick,"ax",%progbits
+ 555              		.align	1
+ 556              		.weak	HAL_ResumeTick
+ 557              		.syntax unified
+ 558              		.thumb
+ 559              		.thumb_func
+ 560              		.fpu fpv4-sp-d16
+ 562              	HAL_ResumeTick:
+ 563              	.LFB142:
+ 420:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 421:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 422:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief Resume Tick increment.
+ 423:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @note In the default implementation , SysTick timer is the source of time base. It is
+ 424:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       used to generate interrupts at regular time intervals. Once HAL_ResumeTick()
+ 425:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       is called, the SysTick interrupt will be enabled and so Tick increment 
+ 426:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       is resumed.
+ 427:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @note This function is declared as __weak to be overwritten in case of other
+ 428:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *       implementations in user file.
+ 429:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval None
+ 430:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 431:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** __weak void HAL_ResumeTick(void)
+ 432:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 564              		.loc 1 432 1 is_stmt 1 view -0
+ARM GAS  /tmp/cc9PANFY.s 			page 19
+
+
+ 565              		.cfi_startproc
+ 566              		@ args = 0, pretend = 0, frame = 0
+ 567              		@ frame_needed = 0, uses_anonymous_args = 0
+ 568              		@ link register save eliminated.
+ 433:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   /* Enable SysTick Interrupt */
+ 434:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   SysTick->CTRL  |= SysTick_CTRL_TICKINT_Msk;
+ 569              		.loc 1 434 3 view .LVU106
+ 570              		.loc 1 434 18 is_stmt 0 view .LVU107
+ 571 0000 024A     		ldr	r2, .L50
+ 572 0002 1368     		ldr	r3, [r2]
+ 573 0004 43F00203 		orr	r3, r3, #2
+ 574 0008 1360     		str	r3, [r2]
+ 435:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 575              		.loc 1 435 1 view .LVU108
+ 576 000a 7047     		bx	lr
+ 577              	.L51:
+ 578              		.align	2
+ 579              	.L50:
+ 580 000c 10E000E0 		.word	-536813552
+ 581              		.cfi_endproc
+ 582              	.LFE142:
+ 584              		.section	.text.HAL_GetHalVersion,"ax",%progbits
+ 585              		.align	1
+ 586              		.global	HAL_GetHalVersion
+ 587              		.syntax unified
+ 588              		.thumb
+ 589              		.thumb_func
+ 590              		.fpu fpv4-sp-d16
+ 592              	HAL_GetHalVersion:
+ 593              	.LFB143:
+ 436:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 437:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 438:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Returns the HAL revision
+ 439:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval version : 0xXYZR (8bits for each decimal, R for RC)
+ 440:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 441:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** uint32_t HAL_GetHalVersion(void)
+ 442:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 594              		.loc 1 442 1 is_stmt 1 view -0
+ 595              		.cfi_startproc
+ 596              		@ args = 0, pretend = 0, frame = 0
+ 597              		@ frame_needed = 0, uses_anonymous_args = 0
+ 598              		@ link register save eliminated.
+ 443:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   return __STM32F4xx_HAL_VERSION;
+ 599              		.loc 1 443 3 view .LVU110
+ 444:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 600              		.loc 1 444 1 is_stmt 0 view .LVU111
+ 601 0000 4FF08470 		mov	r0, #17301504
+ 602 0004 7047     		bx	lr
+ 603              		.cfi_endproc
+ 604              	.LFE143:
+ 606              		.section	.text.HAL_GetREVID,"ax",%progbits
+ 607              		.align	1
+ 608              		.global	HAL_GetREVID
+ 609              		.syntax unified
+ 610              		.thumb
+ 611              		.thumb_func
+ 612              		.fpu fpv4-sp-d16
+ARM GAS  /tmp/cc9PANFY.s 			page 20
+
+
+ 614              	HAL_GetREVID:
+ 615              	.LFB144:
+ 445:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 446:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 447:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Returns the device revision identifier.
+ 448:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval Device revision identifier
+ 449:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 450:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** uint32_t HAL_GetREVID(void)
+ 451:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 616              		.loc 1 451 1 is_stmt 1 view -0
+ 617              		.cfi_startproc
+ 618              		@ args = 0, pretend = 0, frame = 0
+ 619              		@ frame_needed = 0, uses_anonymous_args = 0
+ 620              		@ link register save eliminated.
+ 452:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   return((DBGMCU->IDCODE) >> 16U);
+ 621              		.loc 1 452 3 view .LVU113
+ 622              		.loc 1 452 17 is_stmt 0 view .LVU114
+ 623 0000 014B     		ldr	r3, .L54
+ 624 0002 1868     		ldr	r0, [r3]
+ 453:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 625              		.loc 1 453 1 view .LVU115
+ 626 0004 000C     		lsrs	r0, r0, #16
+ 627 0006 7047     		bx	lr
+ 628              	.L55:
+ 629              		.align	2
+ 630              	.L54:
+ 631 0008 002004E0 		.word	-536600576
+ 632              		.cfi_endproc
+ 633              	.LFE144:
+ 635              		.section	.text.HAL_GetDEVID,"ax",%progbits
+ 636              		.align	1
+ 637              		.global	HAL_GetDEVID
+ 638              		.syntax unified
+ 639              		.thumb
+ 640              		.thumb_func
+ 641              		.fpu fpv4-sp-d16
+ 643              	HAL_GetDEVID:
+ 644              	.LFB145:
+ 454:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 455:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 456:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Returns the device identifier.
+ 457:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval Device identifier
+ 458:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 459:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** uint32_t HAL_GetDEVID(void)
+ 460:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 645              		.loc 1 460 1 is_stmt 1 view -0
+ 646              		.cfi_startproc
+ 647              		@ args = 0, pretend = 0, frame = 0
+ 648              		@ frame_needed = 0, uses_anonymous_args = 0
+ 649              		@ link register save eliminated.
+ 461:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   return((DBGMCU->IDCODE) & IDCODE_DEVID_MASK);
+ 650              		.loc 1 461 3 view .LVU117
+ 651              		.loc 1 461 17 is_stmt 0 view .LVU118
+ 652 0000 024B     		ldr	r3, .L57
+ 653 0002 1868     		ldr	r0, [r3]
+ 462:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 654              		.loc 1 462 1 view .LVU119
+ARM GAS  /tmp/cc9PANFY.s 			page 21
+
+
+ 655 0004 C0F30B00 		ubfx	r0, r0, #0, #12
+ 656 0008 7047     		bx	lr
+ 657              	.L58:
+ 658 000a 00BF     		.align	2
+ 659              	.L57:
+ 660 000c 002004E0 		.word	-536600576
+ 661              		.cfi_endproc
+ 662              	.LFE145:
+ 664              		.section	.text.HAL_DBGMCU_EnableDBGSleepMode,"ax",%progbits
+ 665              		.align	1
+ 666              		.global	HAL_DBGMCU_EnableDBGSleepMode
+ 667              		.syntax unified
+ 668              		.thumb
+ 669              		.thumb_func
+ 670              		.fpu fpv4-sp-d16
+ 672              	HAL_DBGMCU_EnableDBGSleepMode:
+ 673              	.LFB146:
+ 463:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 464:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 465:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Enable the Debug Module during SLEEP mode
+ 466:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval None
+ 467:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 468:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** void HAL_DBGMCU_EnableDBGSleepMode(void)
+ 469:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 674              		.loc 1 469 1 is_stmt 1 view -0
+ 675              		.cfi_startproc
+ 676              		@ args = 0, pretend = 0, frame = 0
+ 677              		@ frame_needed = 0, uses_anonymous_args = 0
+ 678              		@ link register save eliminated.
+ 470:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   SET_BIT(DBGMCU->CR, DBGMCU_CR_DBG_SLEEP);
+ 679              		.loc 1 470 3 view .LVU121
+ 680 0000 024A     		ldr	r2, .L60
+ 681 0002 5368     		ldr	r3, [r2, #4]
+ 682 0004 43F00103 		orr	r3, r3, #1
+ 683 0008 5360     		str	r3, [r2, #4]
+ 471:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 684              		.loc 1 471 1 is_stmt 0 view .LVU122
+ 685 000a 7047     		bx	lr
+ 686              	.L61:
+ 687              		.align	2
+ 688              	.L60:
+ 689 000c 002004E0 		.word	-536600576
+ 690              		.cfi_endproc
+ 691              	.LFE146:
+ 693              		.section	.text.HAL_DBGMCU_DisableDBGSleepMode,"ax",%progbits
+ 694              		.align	1
+ 695              		.global	HAL_DBGMCU_DisableDBGSleepMode
+ 696              		.syntax unified
+ 697              		.thumb
+ 698              		.thumb_func
+ 699              		.fpu fpv4-sp-d16
+ 701              	HAL_DBGMCU_DisableDBGSleepMode:
+ 702              	.LFB147:
+ 472:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 473:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 474:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Disable the Debug Module during SLEEP mode
+ 475:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval None
+ARM GAS  /tmp/cc9PANFY.s 			page 22
+
+
+ 476:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 477:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** void HAL_DBGMCU_DisableDBGSleepMode(void)
+ 478:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 703              		.loc 1 478 1 is_stmt 1 view -0
+ 704              		.cfi_startproc
+ 705              		@ args = 0, pretend = 0, frame = 0
+ 706              		@ frame_needed = 0, uses_anonymous_args = 0
+ 707              		@ link register save eliminated.
+ 479:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   CLEAR_BIT(DBGMCU->CR, DBGMCU_CR_DBG_SLEEP);
+ 708              		.loc 1 479 3 view .LVU124
+ 709 0000 024A     		ldr	r2, .L63
+ 710 0002 5368     		ldr	r3, [r2, #4]
+ 711 0004 23F00103 		bic	r3, r3, #1
+ 712 0008 5360     		str	r3, [r2, #4]
+ 480:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 713              		.loc 1 480 1 is_stmt 0 view .LVU125
+ 714 000a 7047     		bx	lr
+ 715              	.L64:
+ 716              		.align	2
+ 717              	.L63:
+ 718 000c 002004E0 		.word	-536600576
+ 719              		.cfi_endproc
+ 720              	.LFE147:
+ 722              		.section	.text.HAL_DBGMCU_EnableDBGStopMode,"ax",%progbits
+ 723              		.align	1
+ 724              		.global	HAL_DBGMCU_EnableDBGStopMode
+ 725              		.syntax unified
+ 726              		.thumb
+ 727              		.thumb_func
+ 728              		.fpu fpv4-sp-d16
+ 730              	HAL_DBGMCU_EnableDBGStopMode:
+ 731              	.LFB148:
+ 481:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 482:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 483:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Enable the Debug Module during STOP mode
+ 484:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval None
+ 485:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 486:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** void HAL_DBGMCU_EnableDBGStopMode(void)
+ 487:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 732              		.loc 1 487 1 is_stmt 1 view -0
+ 733              		.cfi_startproc
+ 734              		@ args = 0, pretend = 0, frame = 0
+ 735              		@ frame_needed = 0, uses_anonymous_args = 0
+ 736              		@ link register save eliminated.
+ 488:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   SET_BIT(DBGMCU->CR, DBGMCU_CR_DBG_STOP);
+ 737              		.loc 1 488 3 view .LVU127
+ 738 0000 024A     		ldr	r2, .L66
+ 739 0002 5368     		ldr	r3, [r2, #4]
+ 740 0004 43F00203 		orr	r3, r3, #2
+ 741 0008 5360     		str	r3, [r2, #4]
+ 489:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 742              		.loc 1 489 1 is_stmt 0 view .LVU128
+ 743 000a 7047     		bx	lr
+ 744              	.L67:
+ 745              		.align	2
+ 746              	.L66:
+ 747 000c 002004E0 		.word	-536600576
+ARM GAS  /tmp/cc9PANFY.s 			page 23
+
+
+ 748              		.cfi_endproc
+ 749              	.LFE148:
+ 751              		.section	.text.HAL_DBGMCU_DisableDBGStopMode,"ax",%progbits
+ 752              		.align	1
+ 753              		.global	HAL_DBGMCU_DisableDBGStopMode
+ 754              		.syntax unified
+ 755              		.thumb
+ 756              		.thumb_func
+ 757              		.fpu fpv4-sp-d16
+ 759              	HAL_DBGMCU_DisableDBGStopMode:
+ 760              	.LFB149:
+ 490:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 491:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 492:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Disable the Debug Module during STOP mode
+ 493:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval None
+ 494:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 495:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** void HAL_DBGMCU_DisableDBGStopMode(void)
+ 496:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 761              		.loc 1 496 1 is_stmt 1 view -0
+ 762              		.cfi_startproc
+ 763              		@ args = 0, pretend = 0, frame = 0
+ 764              		@ frame_needed = 0, uses_anonymous_args = 0
+ 765              		@ link register save eliminated.
+ 497:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   CLEAR_BIT(DBGMCU->CR, DBGMCU_CR_DBG_STOP);
+ 766              		.loc 1 497 3 view .LVU130
+ 767 0000 024A     		ldr	r2, .L69
+ 768 0002 5368     		ldr	r3, [r2, #4]
+ 769 0004 23F00203 		bic	r3, r3, #2
+ 770 0008 5360     		str	r3, [r2, #4]
+ 498:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 771              		.loc 1 498 1 is_stmt 0 view .LVU131
+ 772 000a 7047     		bx	lr
+ 773              	.L70:
+ 774              		.align	2
+ 775              	.L69:
+ 776 000c 002004E0 		.word	-536600576
+ 777              		.cfi_endproc
+ 778              	.LFE149:
+ 780              		.section	.text.HAL_DBGMCU_EnableDBGStandbyMode,"ax",%progbits
+ 781              		.align	1
+ 782              		.global	HAL_DBGMCU_EnableDBGStandbyMode
+ 783              		.syntax unified
+ 784              		.thumb
+ 785              		.thumb_func
+ 786              		.fpu fpv4-sp-d16
+ 788              	HAL_DBGMCU_EnableDBGStandbyMode:
+ 789              	.LFB150:
+ 499:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 500:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 501:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Enable the Debug Module during STANDBY mode
+ 502:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval None
+ 503:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 504:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** void HAL_DBGMCU_EnableDBGStandbyMode(void)
+ 505:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 790              		.loc 1 505 1 is_stmt 1 view -0
+ 791              		.cfi_startproc
+ 792              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  /tmp/cc9PANFY.s 			page 24
+
+
+ 793              		@ frame_needed = 0, uses_anonymous_args = 0
+ 794              		@ link register save eliminated.
+ 506:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   SET_BIT(DBGMCU->CR, DBGMCU_CR_DBG_STANDBY);
+ 795              		.loc 1 506 3 view .LVU133
+ 796 0000 024A     		ldr	r2, .L72
+ 797 0002 5368     		ldr	r3, [r2, #4]
+ 798 0004 43F00403 		orr	r3, r3, #4
+ 799 0008 5360     		str	r3, [r2, #4]
+ 507:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 800              		.loc 1 507 1 is_stmt 0 view .LVU134
+ 801 000a 7047     		bx	lr
+ 802              	.L73:
+ 803              		.align	2
+ 804              	.L72:
+ 805 000c 002004E0 		.word	-536600576
+ 806              		.cfi_endproc
+ 807              	.LFE150:
+ 809              		.section	.text.HAL_DBGMCU_DisableDBGStandbyMode,"ax",%progbits
+ 810              		.align	1
+ 811              		.global	HAL_DBGMCU_DisableDBGStandbyMode
+ 812              		.syntax unified
+ 813              		.thumb
+ 814              		.thumb_func
+ 815              		.fpu fpv4-sp-d16
+ 817              	HAL_DBGMCU_DisableDBGStandbyMode:
+ 818              	.LFB151:
+ 508:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 509:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 510:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Disable the Debug Module during STANDBY mode
+ 511:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval None
+ 512:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 513:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** void HAL_DBGMCU_DisableDBGStandbyMode(void)
+ 514:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 819              		.loc 1 514 1 is_stmt 1 view -0
+ 820              		.cfi_startproc
+ 821              		@ args = 0, pretend = 0, frame = 0
+ 822              		@ frame_needed = 0, uses_anonymous_args = 0
+ 823              		@ link register save eliminated.
+ 515:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   CLEAR_BIT(DBGMCU->CR, DBGMCU_CR_DBG_STANDBY);
+ 824              		.loc 1 515 3 view .LVU136
+ 825 0000 024A     		ldr	r2, .L75
+ 826 0002 5368     		ldr	r3, [r2, #4]
+ 827 0004 23F00403 		bic	r3, r3, #4
+ 828 0008 5360     		str	r3, [r2, #4]
+ 516:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 829              		.loc 1 516 1 is_stmt 0 view .LVU137
+ 830 000a 7047     		bx	lr
+ 831              	.L76:
+ 832              		.align	2
+ 833              	.L75:
+ 834 000c 002004E0 		.word	-536600576
+ 835              		.cfi_endproc
+ 836              	.LFE151:
+ 838              		.section	.text.HAL_EnableCompensationCell,"ax",%progbits
+ 839              		.align	1
+ 840              		.global	HAL_EnableCompensationCell
+ 841              		.syntax unified
+ARM GAS  /tmp/cc9PANFY.s 			page 25
+
+
+ 842              		.thumb
+ 843              		.thumb_func
+ 844              		.fpu fpv4-sp-d16
+ 846              	HAL_EnableCompensationCell:
+ 847              	.LFB152:
+ 517:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 518:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 519:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Enables the I/O Compensation Cell.
+ 520:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @note   The I/O compensation cell can be used only when the device supply
+ 521:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *         voltage ranges from 2.4 to 3.6 V.  
+ 522:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval None
+ 523:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 524:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** void HAL_EnableCompensationCell(void)
+ 525:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 848              		.loc 1 525 1 is_stmt 1 view -0
+ 849              		.cfi_startproc
+ 850              		@ args = 0, pretend = 0, frame = 0
+ 851              		@ frame_needed = 0, uses_anonymous_args = 0
+ 852              		@ link register save eliminated.
+ 526:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *(__IO uint32_t *)CMPCR_CMP_PD_BB = (uint32_t)ENABLE;
+ 853              		.loc 1 526 3 view .LVU139
+ 854              		.loc 1 526 37 is_stmt 0 view .LVU140
+ 855 0000 014B     		ldr	r3, .L78
+ 856 0002 0122     		movs	r2, #1
+ 857 0004 1A60     		str	r2, [r3]
+ 527:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 858              		.loc 1 527 1 view .LVU141
+ 859 0006 7047     		bx	lr
+ 860              	.L79:
+ 861              		.align	2
+ 862              	.L78:
+ 863 0008 00042742 		.word	1109853184
+ 864              		.cfi_endproc
+ 865              	.LFE152:
+ 867              		.section	.text.HAL_DisableCompensationCell,"ax",%progbits
+ 868              		.align	1
+ 869              		.global	HAL_DisableCompensationCell
+ 870              		.syntax unified
+ 871              		.thumb
+ 872              		.thumb_func
+ 873              		.fpu fpv4-sp-d16
+ 875              	HAL_DisableCompensationCell:
+ 876              	.LFB153:
+ 528:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 529:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 530:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Power-down the I/O Compensation Cell.
+ 531:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @note   The I/O compensation cell can be used only when the device supply
+ 532:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *         voltage ranges from 2.4 to 3.6 V.  
+ 533:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval None
+ 534:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 535:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** void HAL_DisableCompensationCell(void)
+ 536:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 877              		.loc 1 536 1 is_stmt 1 view -0
+ 878              		.cfi_startproc
+ 879              		@ args = 0, pretend = 0, frame = 0
+ 880              		@ frame_needed = 0, uses_anonymous_args = 0
+ 881              		@ link register save eliminated.
+ARM GAS  /tmp/cc9PANFY.s 			page 26
+
+
+ 537:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   *(__IO uint32_t *)CMPCR_CMP_PD_BB = (uint32_t)DISABLE;
+ 882              		.loc 1 537 3 view .LVU143
+ 883              		.loc 1 537 37 is_stmt 0 view .LVU144
+ 884 0000 014B     		ldr	r3, .L81
+ 885 0002 0022     		movs	r2, #0
+ 886 0004 1A60     		str	r2, [r3]
+ 538:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 887              		.loc 1 538 1 view .LVU145
+ 888 0006 7047     		bx	lr
+ 889              	.L82:
+ 890              		.align	2
+ 891              	.L81:
+ 892 0008 00042742 		.word	1109853184
+ 893              		.cfi_endproc
+ 894              	.LFE153:
+ 896              		.section	.text.HAL_GetUIDw0,"ax",%progbits
+ 897              		.align	1
+ 898              		.global	HAL_GetUIDw0
+ 899              		.syntax unified
+ 900              		.thumb
+ 901              		.thumb_func
+ 902              		.fpu fpv4-sp-d16
+ 904              	HAL_GetUIDw0:
+ 905              	.LFB154:
+ 539:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 540:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 541:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Returns first word of the unique device identifier (UID based on 96 bits)
+ 542:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval Device identifier
+ 543:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 544:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** uint32_t HAL_GetUIDw0(void)
+ 545:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 906              		.loc 1 545 1 is_stmt 1 view -0
+ 907              		.cfi_startproc
+ 908              		@ args = 0, pretend = 0, frame = 0
+ 909              		@ frame_needed = 0, uses_anonymous_args = 0
+ 910              		@ link register save eliminated.
+ 546:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   return (READ_REG(*((uint32_t *)UID_BASE)));
+ 911              		.loc 1 546 3 view .LVU147
+ 547:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 912              		.loc 1 547 1 is_stmt 0 view .LVU148
+ 913 0000 014B     		ldr	r3, .L84
+ 914 0002 1868     		ldr	r0, [r3]
+ 915 0004 7047     		bx	lr
+ 916              	.L85:
+ 917 0006 00BF     		.align	2
+ 918              	.L84:
+ 919 0008 107AFF1F 		.word	536836624
+ 920              		.cfi_endproc
+ 921              	.LFE154:
+ 923              		.section	.text.HAL_GetUIDw1,"ax",%progbits
+ 924              		.align	1
+ 925              		.global	HAL_GetUIDw1
+ 926              		.syntax unified
+ 927              		.thumb
+ 928              		.thumb_func
+ 929              		.fpu fpv4-sp-d16
+ 931              	HAL_GetUIDw1:
+ARM GAS  /tmp/cc9PANFY.s 			page 27
+
+
+ 932              	.LFB155:
+ 548:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 549:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 550:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Returns second word of the unique device identifier (UID based on 96 bits)
+ 551:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval Device identifier
+ 552:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 553:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** uint32_t HAL_GetUIDw1(void)
+ 554:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 933              		.loc 1 554 1 is_stmt 1 view -0
+ 934              		.cfi_startproc
+ 935              		@ args = 0, pretend = 0, frame = 0
+ 936              		@ frame_needed = 0, uses_anonymous_args = 0
+ 937              		@ link register save eliminated.
+ 555:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   return (READ_REG(*((uint32_t *)(UID_BASE + 4U))));
+ 938              		.loc 1 555 3 view .LVU150
+ 556:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 939              		.loc 1 556 1 is_stmt 0 view .LVU151
+ 940 0000 014B     		ldr	r3, .L87
+ 941 0002 1868     		ldr	r0, [r3]
+ 942 0004 7047     		bx	lr
+ 943              	.L88:
+ 944 0006 00BF     		.align	2
+ 945              	.L87:
+ 946 0008 147AFF1F 		.word	536836628
+ 947              		.cfi_endproc
+ 948              	.LFE155:
+ 950              		.section	.text.HAL_GetUIDw2,"ax",%progbits
+ 951              		.align	1
+ 952              		.global	HAL_GetUIDw2
+ 953              		.syntax unified
+ 954              		.thumb
+ 955              		.thumb_func
+ 956              		.fpu fpv4-sp-d16
+ 958              	HAL_GetUIDw2:
+ 959              	.LFB156:
+ 557:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** 
+ 558:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** /**
+ 559:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @brief  Returns third word of the unique device identifier (UID based on 96 bits)
+ 560:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   * @retval Device identifier
+ 561:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   */
+ 562:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** uint32_t HAL_GetUIDw2(void)
+ 563:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** {
+ 960              		.loc 1 563 1 is_stmt 1 view -0
+ 961              		.cfi_startproc
+ 962              		@ args = 0, pretend = 0, frame = 0
+ 963              		@ frame_needed = 0, uses_anonymous_args = 0
+ 964              		@ link register save eliminated.
+ 564:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c ****   return (READ_REG(*((uint32_t *)(UID_BASE + 8U))));
+ 965              		.loc 1 564 3 view .LVU153
+ 565:/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c **** }
+ 966              		.loc 1 565 1 is_stmt 0 view .LVU154
+ 967 0000 014B     		ldr	r3, .L90
+ 968 0002 1868     		ldr	r0, [r3]
+ 969 0004 7047     		bx	lr
+ 970              	.L91:
+ 971 0006 00BF     		.align	2
+ 972              	.L90:
+ARM GAS  /tmp/cc9PANFY.s 			page 28
+
+
+ 973 0008 187AFF1F 		.word	536836632
+ 974              		.cfi_endproc
+ 975              	.LFE156:
+ 977              		.global	uwTickFreq
+ 978              		.global	uwTickPrio
+ 979              		.comm	uwTick,4,4
+ 980              		.section	.data.uwTickFreq,"aw"
+ 981              		.set	.LANCHOR0,. + 0
+ 984              	uwTickFreq:
+ 985 0000 01       		.byte	1
+ 986              		.section	.data.uwTickPrio,"aw"
+ 987              		.align	2
+ 988              		.set	.LANCHOR1,. + 0
+ 991              	uwTickPrio:
+ 992 0000 10000000 		.word	16
+ 993              		.text
+ 994              	.Letext0:
+ 995              		.file 2 "/usr/lib/gcc/arm-none-eabi/9.2.1/include/stdint.h"
+ 996              		.file 3 "/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/CMSIS/Inc
+ 997              		.file 4 "/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/CMSIS/Dev
+ 998              		.file 5 "/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/CMSIS/Dev
+ 999              		.file 6 "/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/CMSIS/Dev
+ 1000              		.file 7 "/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx
+ 1001              		.file 8 "/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4xx
+ 1002              		.file 9 "Core/Inc/stm32f4xx_hal_conf.h"
+ 1003              		.file 10 "/home/christoschristoforou/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/STM32F4x
+ARM GAS  /tmp/cc9PANFY.s 			page 29
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 stm32f4xx_hal.c
+     /tmp/cc9PANFY.s:18     .text.HAL_MspInit:0000000000000000 $t
+     /tmp/cc9PANFY.s:26     .text.HAL_MspInit:0000000000000000 HAL_MspInit
+     /tmp/cc9PANFY.s:40     .text.HAL_MspDeInit:0000000000000000 $t
+     /tmp/cc9PANFY.s:47     .text.HAL_MspDeInit:0000000000000000 HAL_MspDeInit
+     /tmp/cc9PANFY.s:60     .text.HAL_DeInit:0000000000000000 $t
+     /tmp/cc9PANFY.s:67     .text.HAL_DeInit:0000000000000000 HAL_DeInit
+     /tmp/cc9PANFY.s:111    .text.HAL_DeInit:0000000000000028 $d
+     /tmp/cc9PANFY.s:116    .text.HAL_InitTick:0000000000000000 $t
+     /tmp/cc9PANFY.s:123    .text.HAL_InitTick:0000000000000000 HAL_InitTick
+     /tmp/cc9PANFY.s:186    .text.HAL_InitTick:0000000000000040 $d
+     /tmp/cc9PANFY.s:193    .text.HAL_Init:0000000000000000 $t
+     /tmp/cc9PANFY.s:200    .text.HAL_Init:0000000000000000 HAL_Init
+     /tmp/cc9PANFY.s:242    .text.HAL_Init:0000000000000030 $d
+     /tmp/cc9PANFY.s:247    .text.HAL_IncTick:0000000000000000 $t
+     /tmp/cc9PANFY.s:254    .text.HAL_IncTick:0000000000000000 HAL_IncTick
+     /tmp/cc9PANFY.s:274    .text.HAL_IncTick:0000000000000010 $d
+                            *COM*:0000000000000004 uwTick
+     /tmp/cc9PANFY.s:280    .text.HAL_GetTick:0000000000000000 $t
+     /tmp/cc9PANFY.s:287    .text.HAL_GetTick:0000000000000000 HAL_GetTick
+     /tmp/cc9PANFY.s:303    .text.HAL_GetTick:0000000000000008 $d
+     /tmp/cc9PANFY.s:308    .text.HAL_GetTickPrio:0000000000000000 $t
+     /tmp/cc9PANFY.s:315    .text.HAL_GetTickPrio:0000000000000000 HAL_GetTickPrio
+     /tmp/cc9PANFY.s:330    .text.HAL_GetTickPrio:0000000000000008 $d
+     /tmp/cc9PANFY.s:335    .rodata.HAL_SetTickFreq.str1.4:0000000000000000 $d
+     /tmp/cc9PANFY.s:341    .text.HAL_SetTickFreq:0000000000000000 $t
+     /tmp/cc9PANFY.s:348    .text.HAL_SetTickFreq:0000000000000000 HAL_SetTickFreq
+     /tmp/cc9PANFY.s:426    .text.HAL_SetTickFreq:000000000000003c $d
+     /tmp/cc9PANFY.s:433    .text.HAL_GetTickFreq:0000000000000000 $t
+     /tmp/cc9PANFY.s:440    .text.HAL_GetTickFreq:0000000000000000 HAL_GetTickFreq
+     /tmp/cc9PANFY.s:455    .text.HAL_GetTickFreq:0000000000000008 $d
+     /tmp/cc9PANFY.s:460    .text.HAL_Delay:0000000000000000 $t
+     /tmp/cc9PANFY.s:467    .text.HAL_Delay:0000000000000000 HAL_Delay
+     /tmp/cc9PANFY.s:520    .text.HAL_Delay:0000000000000024 $d
+     /tmp/cc9PANFY.s:525    .text.HAL_SuspendTick:0000000000000000 $t
+     /tmp/cc9PANFY.s:532    .text.HAL_SuspendTick:0000000000000000 HAL_SuspendTick
+     /tmp/cc9PANFY.s:550    .text.HAL_SuspendTick:000000000000000c $d
+     /tmp/cc9PANFY.s:555    .text.HAL_ResumeTick:0000000000000000 $t
+     /tmp/cc9PANFY.s:562    .text.HAL_ResumeTick:0000000000000000 HAL_ResumeTick
+     /tmp/cc9PANFY.s:580    .text.HAL_ResumeTick:000000000000000c $d
+     /tmp/cc9PANFY.s:585    .text.HAL_GetHalVersion:0000000000000000 $t
+     /tmp/cc9PANFY.s:592    .text.HAL_GetHalVersion:0000000000000000 HAL_GetHalVersion
+     /tmp/cc9PANFY.s:607    .text.HAL_GetREVID:0000000000000000 $t
+     /tmp/cc9PANFY.s:614    .text.HAL_GetREVID:0000000000000000 HAL_GetREVID
+     /tmp/cc9PANFY.s:631    .text.HAL_GetREVID:0000000000000008 $d
+     /tmp/cc9PANFY.s:636    .text.HAL_GetDEVID:0000000000000000 $t
+     /tmp/cc9PANFY.s:643    .text.HAL_GetDEVID:0000000000000000 HAL_GetDEVID
+     /tmp/cc9PANFY.s:660    .text.HAL_GetDEVID:000000000000000c $d
+     /tmp/cc9PANFY.s:665    .text.HAL_DBGMCU_EnableDBGSleepMode:0000000000000000 $t
+     /tmp/cc9PANFY.s:672    .text.HAL_DBGMCU_EnableDBGSleepMode:0000000000000000 HAL_DBGMCU_EnableDBGSleepMode
+     /tmp/cc9PANFY.s:689    .text.HAL_DBGMCU_EnableDBGSleepMode:000000000000000c $d
+     /tmp/cc9PANFY.s:694    .text.HAL_DBGMCU_DisableDBGSleepMode:0000000000000000 $t
+     /tmp/cc9PANFY.s:701    .text.HAL_DBGMCU_DisableDBGSleepMode:0000000000000000 HAL_DBGMCU_DisableDBGSleepMode
+     /tmp/cc9PANFY.s:718    .text.HAL_DBGMCU_DisableDBGSleepMode:000000000000000c $d
+     /tmp/cc9PANFY.s:723    .text.HAL_DBGMCU_EnableDBGStopMode:0000000000000000 $t
+     /tmp/cc9PANFY.s:730    .text.HAL_DBGMCU_EnableDBGStopMode:0000000000000000 HAL_DBGMCU_EnableDBGStopMode
+ARM GAS  /tmp/cc9PANFY.s 			page 30
+
+
+     /tmp/cc9PANFY.s:747    .text.HAL_DBGMCU_EnableDBGStopMode:000000000000000c $d
+     /tmp/cc9PANFY.s:752    .text.HAL_DBGMCU_DisableDBGStopMode:0000000000000000 $t
+     /tmp/cc9PANFY.s:759    .text.HAL_DBGMCU_DisableDBGStopMode:0000000000000000 HAL_DBGMCU_DisableDBGStopMode
+     /tmp/cc9PANFY.s:776    .text.HAL_DBGMCU_DisableDBGStopMode:000000000000000c $d
+     /tmp/cc9PANFY.s:781    .text.HAL_DBGMCU_EnableDBGStandbyMode:0000000000000000 $t
+     /tmp/cc9PANFY.s:788    .text.HAL_DBGMCU_EnableDBGStandbyMode:0000000000000000 HAL_DBGMCU_EnableDBGStandbyMode
+     /tmp/cc9PANFY.s:805    .text.HAL_DBGMCU_EnableDBGStandbyMode:000000000000000c $d
+     /tmp/cc9PANFY.s:810    .text.HAL_DBGMCU_DisableDBGStandbyMode:0000000000000000 $t
+     /tmp/cc9PANFY.s:817    .text.HAL_DBGMCU_DisableDBGStandbyMode:0000000000000000 HAL_DBGMCU_DisableDBGStandbyMode
+     /tmp/cc9PANFY.s:834    .text.HAL_DBGMCU_DisableDBGStandbyMode:000000000000000c $d
+     /tmp/cc9PANFY.s:839    .text.HAL_EnableCompensationCell:0000000000000000 $t
+     /tmp/cc9PANFY.s:846    .text.HAL_EnableCompensationCell:0000000000000000 HAL_EnableCompensationCell
+     /tmp/cc9PANFY.s:863    .text.HAL_EnableCompensationCell:0000000000000008 $d
+     /tmp/cc9PANFY.s:868    .text.HAL_DisableCompensationCell:0000000000000000 $t
+     /tmp/cc9PANFY.s:875    .text.HAL_DisableCompensationCell:0000000000000000 HAL_DisableCompensationCell
+     /tmp/cc9PANFY.s:892    .text.HAL_DisableCompensationCell:0000000000000008 $d
+     /tmp/cc9PANFY.s:897    .text.HAL_GetUIDw0:0000000000000000 $t
+     /tmp/cc9PANFY.s:904    .text.HAL_GetUIDw0:0000000000000000 HAL_GetUIDw0
+     /tmp/cc9PANFY.s:919    .text.HAL_GetUIDw0:0000000000000008 $d
+     /tmp/cc9PANFY.s:924    .text.HAL_GetUIDw1:0000000000000000 $t
+     /tmp/cc9PANFY.s:931    .text.HAL_GetUIDw1:0000000000000000 HAL_GetUIDw1
+     /tmp/cc9PANFY.s:946    .text.HAL_GetUIDw1:0000000000000008 $d
+     /tmp/cc9PANFY.s:951    .text.HAL_GetUIDw2:0000000000000000 $t
+     /tmp/cc9PANFY.s:958    .text.HAL_GetUIDw2:0000000000000000 HAL_GetUIDw2
+     /tmp/cc9PANFY.s:973    .text.HAL_GetUIDw2:0000000000000008 $d
+     /tmp/cc9PANFY.s:984    .data.uwTickFreq:0000000000000000 uwTickFreq
+     /tmp/cc9PANFY.s:991    .data.uwTickPrio:0000000000000000 uwTickPrio
+     /tmp/cc9PANFY.s:987    .data.uwTickPrio:0000000000000000 $d
+
+UNDEFINED SYMBOLS
+HAL_SYSTICK_Config
+HAL_NVIC_SetPriority
+SystemCoreClock
+HAL_NVIC_SetPriorityGrouping
+assert_failed

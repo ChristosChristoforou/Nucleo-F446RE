@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"cortex-debug.armToolchainPath": "/usr/bin",
+		"cortex-debug.openocdPath": "/usr/bin/openocd"
+	}
+}
