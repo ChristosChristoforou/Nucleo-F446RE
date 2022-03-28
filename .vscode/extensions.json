@@ -1,0 +1,12 @@
+{
+    "recommendations": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cpptools-extension-pack",
+        "ms-vscode.cpptools-themes",
+        "marus25.cortex-debug",
+        "ms-vscode.makefile-tools",
+        "esbenp.prettier-vscode",
+        "bmd.stm32-for-vscode",
+        "austin.code-gnu-global"
+    ]
+}
